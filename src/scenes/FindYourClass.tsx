@@ -53,7 +53,7 @@ export function FindYourClass() {
         <div className="lg:col-span-5 lg:col-start-8">
           <div className="lg:sticky lg:top-[calc(var(--header-h)+1.5rem)]">
             <div aria-live="polite" className="bg-ink p-[clamp(1.5rem,3vw,2.5rem)] text-canvas">
-              <h3 className="font-display text-[1.375rem] font-semibold tracking-[-0.02em] text-turquoise">{t.find.resultTitle}</h3>
+              <h3 className="font-display text-[1.375rem] font-medium tracking-[-0.02em] text-turquoise">{t.find.resultTitle}</h3>
               <AnimatePresence mode="wait" initial={false}>
                 {!rec || !p ? (
                   <motion.p
@@ -78,7 +78,7 @@ export function FindYourClass() {
                     exit={{ opacity: 0, y: -8 }}
                     transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
                   >
-                    <p className="mt-4 font-display text-title font-semibold leading-[1] tracking-display">{l(p.name)}</p>
+                    <p className="mt-4 font-display text-title font-medium leading-[1] tracking-display">{l(p.name)}</p>
                     <p className="mt-3 text-[1.0625rem]">
                       {l(rec.studio.district)} · {l(rec.studio.address)}
                     </p>
@@ -147,7 +147,7 @@ function Choice({
   const reduce = useReducedMotion()
   return (
     <fieldset>
-      <legend className="font-display text-[1.375rem] font-semibold tracking-[-0.02em]">{legend}</legend>
+      <legend className="font-display text-[1.375rem] font-medium tracking-[-0.02em]">{legend}</legend>
       <div className="mt-4 flex flex-wrap gap-2">
         {options.map((o) => {
           const checked = value === o.value

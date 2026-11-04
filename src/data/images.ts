@@ -45,6 +45,10 @@ export const pics = {
   digitalYellow: p('digital-girl-yellow', 799, 600, 'Цифровая иллюстрация: девочка с тёмными волосами на жёлтом фоне', 'Ilustrație digitală: o fetiță cu părul închis pe fundal galben'),
   digitalViolet: p('digital-boy-violet', 800, 600, 'Цифровая иллюстрация: мальчик на сиреневом фоне', 'Ilustrație digitală: un băiat pe fundal violet'),
   digitalPink: p('digital-girl-pink', 799, 600, 'Цифровая иллюстрация: девушка на розовом фоне', 'Ilustrație digitală: o tânără pe fundal roz'),
+  artBee: p('art-bee', 410, 574, 'Работа ученицы: шмель среди ромашек, краска на бумаге', 'Lucrarea unei eleve: un bondar printre mușețel, vopsea pe hârtie'),
+  artKoi: p('art-koi', 398, 588, 'Работа ученика: рыбы кои среди листьев кувшинок', 'Lucrarea unui elev: pești koi printre frunze de nufăr'),
+  artJellyfish: p('art-jellyfish', 388, 616, 'Работа ученицы: розовые медузы в синей воде', 'Lucrarea unei eleve: meduze roz în apă albastră'),
+  artStarry: p('art-starry', 547, 377, 'Работа ученицы по мотивам «Звёздной ночи» Ван Гога', 'Lucrarea unei eleve după „Noaptea înstelată” de Van Gogh'),
 } satisfies Record<string, Pic>
 
 const BASE = import.meta.env.BASE_URL

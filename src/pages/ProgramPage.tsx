@@ -10,9 +10,9 @@ import { useLang } from '../i18n/lang'
 import { usePageTitle } from '../lib/usePageTitle'
 
 const heroTone = {
-  coral: 'bg-coral text-ink',
+  coral: 'paper',
   plum: 'bg-plum text-canvas',
-  ochre: 'bg-ochre text-ink',
+  ochre: 'bg-canvas-2 text-ink',
 } as const
 
 export function ProgramPage() {
@@ -56,7 +56,7 @@ export function ProgramPage() {
               <div className="mt-auto pt-10">
                 <motion.h1
                   id="program-title"
-                  className="font-display text-[clamp(2.5rem,6.2vw,6.25rem)] font-semibold leading-[0.92] tracking-display"
+                  className="font-display text-[clamp(2.5rem,6.2vw,6.25rem)] font-medium leading-[0.92] tracking-display"
                   initial={reduce ? false : { opacity: 0, y: 24 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
@@ -106,7 +106,7 @@ export function ProgramPage() {
               {p.facts.map((f) => (
                 <RevealItem as="li" key={f.k.ru} className="flex flex-col gap-2">
                   <span className="text-[1rem]">{l(f.k)}</span>
-                  <span className="font-display text-[clamp(1.5rem,2.4vw,2.25rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-turquoise">{l(f.v)}</span>
+                  <span className="font-display text-[clamp(1.5rem,2.4vw,2.25rem)] font-medium leading-[1.05] tracking-[-0.03em] text-turquoise">{l(f.v)}</span>
                 </RevealItem>
               ))}
             </Reveal>
@@ -126,7 +126,7 @@ export function ProgramPage() {
                     <span aria-hidden className="absolute bottom-0 left-2 top-0 w-1 bg-turquoise md:bottom-auto md:left-0 md:right-1 md:top-3 md:h-1 md:w-auto" style={{ opacity: 0.4 + i * 0.2 }} />
                     <span aria-hidden className="absolute left-0 top-1 h-5 w-5 rounded-full bg-turquoise md:top-1" />
                     <p className="text-[1rem]">{t.program.months(m.months)}</p>
-                    <h3 className="mt-2 font-display text-[1.375rem] font-semibold leading-[1.15] tracking-[-0.02em]">{l(m.title)}</h3>
+                    <h3 className="mt-2 font-display text-[1.375rem] font-medium leading-[1.15] tracking-[-0.02em]">{l(m.title)}</h3>
                   </RevealItem>
                 ))}
               </Reveal>
@@ -142,10 +142,10 @@ export function ProgramPage() {
                 {p.techniques ? t.program.techniques : t.program.audience}
               </h2>
               <Reveal as="ul" className="flex flex-col lg:col-span-6 lg:col-start-7">
-                {(p.techniques ?? p.audience ?? []).map((x, i) => (
+                {(p.techniques ?? p.audience ?? []).map((x) => (
                   <RevealItem as="li" key={x.ru} className="flex items-baseline gap-5 py-3">
-                    <span aria-hidden className="h-3 w-3 shrink-0 translate-y-[-0.2em] rounded-full" style={{ background: ['var(--color-turquoise)', 'var(--color-coral)', 'var(--color-ochre)', 'var(--color-plum)'][i % 4] }} />
-                    <span className="font-display text-[clamp(1.375rem,2.6vw,2.25rem)] font-semibold leading-[1.1] tracking-[-0.03em]">{l(x)}</span>
+                    <span aria-hidden className="h-3 w-3 shrink-0 translate-y-[-0.2em] rounded-full" style={{ background: 'var(--color-turquoise)' }} />
+                    <span className="font-display text-[clamp(1.375rem,2.6vw,2.25rem)] font-medium leading-[1.1] tracking-[-0.03em]">{l(x)}</span>
                   </RevealItem>
                 ))}
               </Reveal>
@@ -165,14 +165,14 @@ export function ProgramPage() {
                   ? p.process.map((s) => (
                       <RevealItem as="li" key={s.title.ru}>
                         <span aria-hidden className="block h-1 w-12 bg-turquoise" />
-                        <h3 className="mt-5 font-display text-[1.375rem] font-semibold tracking-[-0.02em]">{l(s.title)}</h3>
+                        <h3 className="mt-5 font-display text-[1.375rem] font-medium tracking-[-0.02em]">{l(s.title)}</h3>
                         <p className="mt-2 text-[1.0625rem]">{l(s.text)}</p>
                       </RevealItem>
                     ))
                   : p.outcomes!.map((o) => (
                       <RevealItem as="li" key={o.ru}>
                         <span aria-hidden className="block h-1 w-12 bg-turquoise" />
-                        <p className="mt-5 font-display text-[1.25rem] font-semibold leading-[1.2] tracking-[-0.02em]">{l(o)}</p>
+                        <p className="mt-5 font-display text-[1.25rem] font-medium leading-[1.2] tracking-[-0.02em]">{l(o)}</p>
                       </RevealItem>
                     ))}
               </Reveal>
@@ -224,7 +224,7 @@ export function ProgramPage() {
               {where.map((s) => (
                 <li key={s.id}>
                   <a href={mapLink(s.mapQuery)} target="_blank" rel="noreferrer" className="group flex h-full flex-col gap-1 bg-canvas-2 p-6 transition-colors hover:bg-[#e0d1b9]">
-                    <span className="font-display text-[1.5rem] font-semibold tracking-[-0.02em]">{l(s.district)}</span>
+                    <span className="font-display text-[1.5rem] font-medium tracking-[-0.02em]">{l(s.district)}</span>
                     <span className="text-[1.0625rem]">{l(s.address)}</span>
                     <span className="mt-3 text-[0.9375rem] font-semibold text-turquoise-deep">{t.inside.route} ↗</span>
                   </a>
@@ -244,7 +244,7 @@ export function ProgramPage() {
               <div className="flex flex-col gap-2 lg:col-span-8">
                 {p.faq.map((f) => (
                   <details key={f.q.ru} className="group bg-plum open:bg-plum-2">
-                    <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-6 px-6 py-4 font-display text-[1.1875rem] font-semibold tracking-[-0.02em] [&::-webkit-details-marker]:hidden">
+                    <summary className="flex min-h-16 cursor-pointer list-none items-center justify-between gap-6 px-6 py-4 font-display text-[1.1875rem] font-medium tracking-[-0.02em] [&::-webkit-details-marker]:hidden">
                       {l(f.q)}
                       <span aria-hidden className="text-[1.5rem] text-turquoise transition-transform duration-300 group-open:rotate-45">
                         +
@@ -281,7 +281,7 @@ export function ProgramPage() {
         {/* OTHER PROGRAMS */}
         <nav aria-labelledby="other-title" className="bg-ink py-16 text-canvas">
           <div className="frame">
-            <h2 id="other-title" className="font-display text-[1.375rem] font-semibold tracking-[-0.02em]">
+            <h2 id="other-title" className="font-display text-[1.375rem] font-medium tracking-[-0.02em]">
               {t.program.other}
             </h2>
             <ul className="mt-6 grid gap-2 md:grid-cols-2">
@@ -290,7 +290,7 @@ export function ProgramPage() {
                 .map((x) => (
                   <li key={x.id}>
                     <Link to={`/programs/${x.id}`} className={`group flex min-h-28 items-end justify-between gap-4 p-6 ${heroTone[x.color]}`}>
-                      <span className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-semibold leading-none tracking-display">{l(x.name)}</span>
+                      <span className="font-display text-[clamp(1.5rem,3vw,2.5rem)] font-medium leading-none tracking-display">{l(x.name)}</span>
                       <span aria-hidden className="text-[1.75rem] transition-transform duration-300 group-hover:translate-x-1.5">
                         →
                       </span>

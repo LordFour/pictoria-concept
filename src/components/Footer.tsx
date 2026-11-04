@@ -23,7 +23,7 @@ export function Footer({ tone = 'paper' }: { tone?: 'paper' | 'ink' }) {
           >
             <Mark className="w-[12vw] max-w-[200px]" color={paper ? 'var(--color-ink)' : 'var(--color-turquoise)'} />
           </motion.div>
-          <p aria-hidden className="min-w-0 font-display text-[12.6vw] font-semibold leading-[0.78] tracking-[-0.05em]">
+          <p aria-hidden className="min-w-0 font-display text-[12.6vw] font-medium leading-[0.78] tracking-[-0.05em]">
             PICTORIA
           </p>
         </div>

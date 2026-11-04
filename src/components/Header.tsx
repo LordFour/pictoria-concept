@@ -8,7 +8,7 @@ export function Wordmark({ className = '' }: { className?: string }) {
   return (
     <span className={`inline-flex items-center gap-2.5 ${className}`}>
       <Mark className="h-8 w-8 shrink-0" />
-      <span className="font-display text-[1.05rem] font-semibold tracking-[0.02em]">PICTORIA</span>
+      <span className="font-display text-[1.05rem] font-medium tracking-[0.02em]">PICTORIA</span>
     </span>
   )
 }
@@ -42,6 +42,7 @@ export function LangSwitch({ className = '' }: { className?: string }) {
 
 const links = [
   { to: '/#explore', key: 'programs' },
+  { to: '/#digital', key: 'digital' },
   { to: '/#gallery', key: 'gallery' },
   { to: '/#inside', key: 'studios' },
   { to: '/#find', key: 'find' },
@@ -195,7 +196,7 @@ export function Header() {
                     <Link
                       to={l.to}
                       onClick={() => setOpen(false)}
-                      className="block py-3 font-display text-[clamp(2rem,9vw,3rem)] font-semibold tracking-display active:text-turquoise"
+                      className="block py-3 font-display text-[clamp(2rem,9vw,3rem)] font-medium tracking-display active:text-turquoise"
                     >
                       {t.nav[l.key]}
                     </Link>

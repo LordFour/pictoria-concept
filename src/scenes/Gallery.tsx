@@ -7,28 +7,22 @@ import { useLang } from '../i18n/lang'
 
 type Item = { pic: Pic; digital?: boolean }
 
-const dropped: { pic: Pic; cls: string; rot: number }[] = [
-  { pic: pics.girlBee, cls: 'left-[5%] top-[3%] w-[38vw] md:left-[3%] md:top-[6%] md:w-[19vw] lg:w-[17vw]', rot: -8 },
-  { pic: pics.boyKoi, cls: 'right-[5%] bottom-[11%] w-[32vw] md:right-[4%] md:bottom-[5%] md:w-[19vw] lg:w-[17vw]', rot: 6 },
-  { pic: pics.girlPeacock, cls: 'hidden md:block md:right-[14%] md:top-[4%] md:w-[10vw]', rot: -3 },
+const dropped: { pic: Pic; cls: string; rot: number; digital?: boolean }[] = [
+  { pic: pics.artBee, cls: 'left-[5%] top-[3%] w-[34vw] md:left-[4%] md:top-[7%] md:w-[16vw] lg:w-[14vw]', rot: -4 },
+  { pic: pics.digitalPink, cls: 'right-[5%] bottom-[22%] w-[44vw] md:right-[4%] md:bottom-[7%] md:w-[24vw] lg:w-[22vw]', rot: 3, digital: true },
+  { pic: pics.artKoi, cls: 'hidden md:block md:right-[12%] md:top-[5%] md:w-[11vw]', rot: -2 },
 ]
 
 const wall: (Item & { cls: string })[] = [
-  { pic: pics.teenStarry, cls: 'col-span-6 md:col-span-4' },
-  { pic: pics.girlAbstract, cls: 'col-span-6 mt-16 md:col-span-5 md:col-start-6 md:mt-[18svh]' },
-  { pic: pics.girlJellyfish, cls: 'col-span-6 md:col-span-3 md:col-start-2 md:-mt-[10svh]' },
-  { pic: pics.digitalViolet, cls: 'col-span-6 mt-10 md:col-span-4 md:col-start-6 md:mt-0', digital: true },
-  { pic: pics.girlEaselOrange, cls: 'col-span-6 md:col-span-3 md:col-start-10 md:-mt-[24svh]' },
-  { pic: pics.boyJellyfish, cls: 'col-span-6 mt-10 md:col-span-3 md:col-start-1 md:mt-0' },
-  { pic: pics.toddlerEasel, cls: 'col-span-6 md:col-span-5 md:col-start-5 md:mt-[8svh]' },
-  { pic: pics.digitalPink, cls: 'col-span-6 mt-10 md:col-span-3 md:col-start-10 md:mt-[2svh]', digital: true },
-  { pic: pics.girlBlackTree, cls: 'col-span-6 md:col-span-3 md:col-start-2 md:-mt-[12svh]' },
-  { pic: pics.girlSmile, cls: 'col-span-6 mt-10 md:col-span-3 md:col-start-6 md:mt-0' },
+  { pic: pics.artStarry, cls: 'col-span-12 md:col-span-6' },
+  { pic: pics.digitalViolet, cls: 'col-span-12 md:col-span-5 md:col-start-8 md:mt-[16svh]', digital: true },
+  { pic: pics.artJellyfish, cls: 'col-span-6 md:col-span-3 md:col-start-2 md:-mt-[6svh]' },
+  { pic: pics.digitalYellow, cls: 'col-span-6 mt-16 md:col-span-4 md:col-start-6 md:mt-[4svh]', digital: true },
 ]
 
-const all: Item[] = [...dropped.map((d) => ({ pic: d.pic })), ...wall]
+const all: Item[] = [...dropped.map((d) => ({ pic: d.pic, digital: d.digital })), ...wall]
 
-/** Scene 04 — The Gallery. Prints dropped on the headline, then an asymmetric wall. */
+/** Scene 05 — The Gallery. Canvas and screen side by side: prints laid on the headline, then an asymmetric wall. */
 export function Gallery() {
   const { t } = useLang()
   const [open, setOpen] = useState<number | null>(null)
@@ -37,7 +31,7 @@ export function Gallery() {
     <section id="gallery" aria-labelledby="gallery-title" className="relative bg-plum text-canvas">
       {/* prints dropped on the headline */}
       <div className="relative flex min-h-[100svh] items-center justify-center overflow-hidden py-24">
-        <h2 id="gallery-title" className="relative z-0 text-center font-display text-[clamp(2.75rem,13.5vw,7rem)] font-semibold leading-[0.88] tracking-display md:text-[clamp(4.5rem,10vw,11.5rem)]">
+        <h2 id="gallery-title" className="relative z-0 text-center font-display text-[clamp(3.5rem,19vw,7rem)] font-medium leading-[0.88] tracking-display md:text-[clamp(4.5rem,10vw,11.5rem)]">
           <span className="block">{t.gallery.titleA}</span>
           <span className="block text-turquoise">{t.gallery.titleB}</span>
         </h2>
@@ -83,7 +77,7 @@ function Print({ pic, rot, className, onOpen, delay }: { pic: Pic; rot: number; 
       whileFocus={reduce ? undefined : { rotate: 0, scale: 1.04, zIndex: 30 }}
       whileTap={{ scale: 0.98 }}
     >
-      <Img pic={pic} sizes="(min-width:768px) 24vw, 44vw" className="aspect-[3/4] w-full object-cover" decorative />
+      <Img pic={pic} sizes="(min-width:768px) 24vw, 44vw" className="w-full" decorative />
     </motion.button>
   )
 }
@@ -107,7 +101,10 @@ function WallPrint({ item, onOpen }: { item: Item; onOpen: () => void }) {
         {/* the Pictoria line traces the print on hover */}
         <span aria-hidden className="pointer-events-none absolute inset-0 border-[6px] border-turquoise opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100" />
       </button>
-      {item.digital && <figcaption className="mt-3 text-[0.9375rem] text-canvas/85">{t.gallery.digitalCredit}</figcaption>}
+      <figcaption className="mt-3 flex items-center gap-2.5 text-[0.9375rem] text-canvas/85">
+        <span aria-hidden className={`h-2.5 w-2.5 ${item.digital ? 'bg-turquoise' : 'rounded-full bg-canvas'}`} />
+        {item.digital ? t.gallery.digitalCredit : t.gallery.tagTrad}
+      </figcaption>
     </figure>
   )
 }
@@ -184,7 +181,7 @@ function Lightbox({ items, index, onClose, onIndex }: { items: Item[]; index: nu
             />
             <figcaption className="max-w-[60ch] text-center text-[1rem]">
               {l(item.pic.alt)}
-              {item.digital ? ` · ${t.gallery.digitalCredit}` : ''}
+              {` · ${item.digital ? t.gallery.digitalCredit : t.gallery.tagTrad}`}
             </figcaption>
           </figure>
           <div className="flex justify-between gap-4">

@@ -1,7 +1,8 @@
 import { CreativeJourney } from '../scenes/CreativeJourney'
 import { ExploreArt } from '../scenes/ExploreArt'
 import { FindYourClass } from '../scenes/FindYourClass'
-import { FirstStroke } from '../scenes/FirstStroke'
+import { CanvasToDigital } from '../scenes/CanvasToDigital'
+import { DigitalArt } from '../scenes/DigitalArt'
 import { Gallery } from '../scenes/Gallery'
 import { InsidePictoria } from '../scenes/InsidePictoria'
 import { YourTurn } from '../scenes/YourTurn'
@@ -13,8 +14,9 @@ export function Home() {
   return (
     <>
       <main id="main">
-        <FirstStroke />
+        <CanvasToDigital />
         <ExploreArt />
+        <DigitalArt />
         <CreativeJourney />
         <Gallery />
         <InsidePictoria />

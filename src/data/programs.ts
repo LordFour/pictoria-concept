@@ -36,7 +36,7 @@ export const programs: Record<ProgramId, Program> = {
       'Курсы рисования для детей и взрослых: от карандашного рисунка до живописи маслом. Опыт не нужен, материалы ждут вас в мастерской.',
       'Cursuri de desen pentru copii și adulți: de la desenul în creion la pictura în ulei. Nu e nevoie de experiență, materialele vă așteaptă în atelier.',
     ),
-    hero: pics.boyLion,
+    hero: pics.handWatercolor,
     facts: [
       { k: l('Занятие', 'Lecția'), v: l('1,5–2 часа', '1,5–2 ore') },
       { k: l('Материалы', 'Materiale'), v: l('Все на месте', 'Toate sunt în atelier') },
@@ -76,7 +76,7 @@ export const programs: Record<ProgramId, Program> = {
         text: l('У каждой группы есть Viber-чат: там появляются работы и фото с занятий.', 'Fiecare grupă are un chat pe Viber, unde apar lucrările și fotografiile de la lecții.'),
       },
     ],
-    gallery: [pics.girlFlowers, pics.girlBee, pics.boyKoi, pics.teenStarry, pics.girlPeacock, pics.boyJellyfish],
+    gallery: [pics.artStarry, pics.artBee, pics.artKoi, pics.artJellyfish, pics.teenStarry, pics.girlFlowers],
     faq: [
       {
         q: l('Нужен ли опыт рисования?', 'Este nevoie de experiență în desen?'),

@@ -1,6 +1,6 @@
-# PICTORIA — The Living Canvas · concept prototype
+# PICTORIA — From Canvas to Digital · concept prototype
 
-Интерактивный концепт-прототип сайта **Pictoria Art Studio** (Кишинёв): рисунок и живопись, Digital Art, творческие мастер-классы.
+Интерактивный концепт-прототип сайта **Pictoria — Contemporary Creative Art Studio** (Кишинёв): два равных мира, традиционное искусство и Digital Art, плюс мастер-классы.
 
 > ⚠️ Это **концепция для презентации владелице студии**, а не официальный сайт. Действующий сайт pictoria.info не изменялся. Фотографии детей взяты с pictoria.info; согласия родителей на публикацию в рамках концепта не подтверждены — см. `docs/CONTENT-GAPS.md` §5.
 
@@ -39,8 +39,8 @@ npm run preview    # http://127.0.0.1:4173
 
 | URL | Что это |
 | --- | --- |
-| `/` | Главная: семь сцен (First Stroke → Your Turn) |
-| `/#explore` `/#journey` `/#gallery` `/#inside` `/#find` `/#contacts` | Якоря сцен |
+| `/` | Главная: восемь сцен (Canvas to Digital → Your Turn) |
+| `/#explore` `/#digital` `/#journey` `/#gallery` `/#inside` `/#find` `/#contacts` | Якоря сцен |
 | `/programs/drawing-painting` | Страница курса «Рисунок и живопись» |
 | `/programs/digital-art` | Страница курса «Digital Art» (4 модуля) |
 | `/programs/workshops` | Мастер-классы (демо-страница, формат не подтверждён) |
@@ -50,7 +50,7 @@ npm run preview    # http://127.0.0.1:4173
 ## Стек
 
 React 19 · TypeScript · Vite 8 · Tailwind CSS 4 · Motion (`motion/react`) · React Router 7.
-Шрифты Unbounded + Onest (fontsource, локально, кириллица и румынская латиница).
+Шрифты Playfair Display + Onest (fontsource, локально, кириллица и румынская латиница).
 GSAP не используется: Motion закрывает все задачи (scroll-linked `pathLength`, `clip-path`, `whileInView`, spring).
 
 ## Структура
@@ -60,10 +60,11 @@ docs/                BRAND-CONCEPT · STORYBOARD · CONTENT-GAPS
 src/index.css        дизайн-токены (@theme), кнопки, бумажная фактура, reduced-motion
 src/i18n/            RU/RO словарь + контекст языка
 src/data/            программы, студии, контакты, фото (всё — с pictoria.info)
-src/scenes/          7 сцен главной страницы
+src/scenes/          8 сцен главной страницы
 src/pages/           Home · ProgramPage · EnrollPage · NotFound
 src/components/      Header (+ мобильное меню), Footer, Img, Mark, Reveal, BrushDefs
-public/img/          фото Pictoria в WebP, 640/1280 px
+public/img/          фото Pictoria и вырезанные из них работы, WebP 640/1280 px
+public/art/          изображение первого экрана (холст и цифровая версия), WebP 1200/2400 px
 public/brand/        знак (дерево в круге), вырезан из растрового логотипа
 _source-temp/        исходные загрузки с сайта (не попадают в сборку)
 screenshots/         qa/ — скриншоты автотестов; presentation/ — подборка для показа
@@ -105,5 +106,6 @@ screenshots/         qa/ — скриншоты автотестов; presentati
 - Расписание в подборе — пример, помечен «Демо».
 - Стоимость не показана нигде.
 - Знак Pictoria — растровая маска из логотипа сайта; для продакшена нужен вектор.
+- Первый экран: фрагмент картины Винсента ван Гога «Ирисы» (1889, J. Paul Getty Museum), общественное достояние, Wikimedia Commons. Цифровая половина — демо-интерпретация этого фрагмента в палитре Pictoria, сделана для концепта. В рабочей версии её стоит заменить парой «холст + цифра» от самой студии.
 - Румынский перевод рабочий, нужна вычитка носителем.
 - Полный список вопросов к студии — `docs/CONTENT-GAPS.md`.

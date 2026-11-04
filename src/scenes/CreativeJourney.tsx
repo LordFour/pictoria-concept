@@ -6,15 +6,15 @@ import { pics } from '../data/images'
 import { useLang } from '../i18n/lang'
 
 const stages = [
-  { pic: pics.girlPalette, span: 'lg:col-span-2', h: 'lg:h-[30svh]', mh: 'h-[56vw]' },
-  { pic: pics.tableWatercolor, span: 'lg:col-span-3', h: 'lg:h-[40svh]', mh: 'h-[66vw]' },
-  { pic: pics.boyEasel, span: 'lg:col-span-3', h: 'lg:h-[50svh]', mh: 'h-[78vw]' },
+  { pic: pics.tableWatercolor, span: 'lg:col-span-2', h: 'lg:h-[30svh]', mh: 'h-[56vw]' },
+  { pic: pics.handWatercolor, span: 'lg:col-span-3', h: 'lg:h-[40svh]', mh: 'h-[66vw]' },
+  { pic: pics.digitalPink, span: 'lg:col-span-3', h: 'lg:h-[50svh]', mh: 'h-[78vw]' },
   { pic: pics.teenStarry, span: 'lg:col-span-4', h: 'lg:h-[62svh]', mh: 'h-[96vw]' },
 ]
 
 /**
  * Scene 03 — The Creative Journey, on paper.
- * The branch from Pictoria's tree mark grows across four stages; tiles grow with it.
+ * One line grows across four stages, from paper to screen; tiles grow with it.
  */
 export function CreativeJourney() {
   const { t } = useLang()
@@ -86,7 +86,7 @@ export function CreativeJourney() {
                     />
                   </RevealItem>
                   <RevealItem className="pt-5 lg:min-h-[10.5rem]">
-                    <h3 className="font-display text-[1.375rem] font-semibold tracking-[-0.02em]">{step.title}</h3>
+                    <h3 className="font-display text-[1.375rem] font-medium tracking-[-0.02em]">{step.title}</h3>
                     <p className="mt-2 max-w-[34ch] text-[1.0625rem] leading-[1.5]">{step.text}</p>
                   </RevealItem>
                 </Reveal>

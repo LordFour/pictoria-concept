@@ -51,7 +51,7 @@ export function InsidePictoria() {
 
       {reduce ? (
         <div className="frame mt-12 grid gap-3 md:grid-cols-3">
-          {[pics.kidsEasels, pics.studioEasels, pics.girlEaselRoom].map((p) => (
+          {[pics.tabletHands, pics.studioEasels, pics.artStarry].map((p) => (
             <Img key={p.id} pic={p} sizes="(min-width:768px) 33vw, 100vw" className="aspect-[3/4] w-full object-cover" />
           ))}
         </div>
@@ -62,16 +62,16 @@ export function InsidePictoria() {
             <motion.div
               aria-hidden
               style={{ x: leftX, opacity: sideOpacity }}
-              className="absolute left-[6%] top-[30%] hidden w-[17%] bg-ink outline outline-[12px] outline-coral md:block"
+              className="absolute left-[6%] top-[30%] hidden w-[17%] bg-ink outline outline-[12px] outline-canvas md:block"
             >
-              <Img pic={pics.kidsEasels} sizes="20vw" loading="eager" className="aspect-[3/4] w-full object-cover" decorative />
+              <Img pic={pics.tabletHands} sizes="20vw" loading="eager" className="aspect-[3/4] w-full object-cover" decorative />
             </motion.div>
             <motion.div
               aria-hidden
               style={{ x: rightX, opacity: sideOpacity }}
-              className="absolute right-[6%] top-[26%] hidden w-[17%] outline outline-[12px] outline-ochre md:block"
+              className="absolute right-[6%] top-[26%] hidden w-[17%] outline outline-[12px] outline-canvas md:block"
             >
-              <Img pic={pics.girlEaselRoom} sizes="20vw" loading="eager" className="aspect-[3/4] w-full object-cover" decorative />
+              <Img pic={pics.artStarry} sizes="20vw" loading="eager" className="aspect-[3/4] w-full object-cover" decorative />
             </motion.div>
 
             {/* the window */}
@@ -100,7 +100,7 @@ export function InsidePictoria() {
         <Reveal as="ul" className="grid gap-10 sm:grid-cols-3 lg:col-span-12">
           {t.inside.facts.map((f) => (
             <RevealItem as="li" key={f.v} className="flex flex-col gap-2">
-              <span className="font-display text-[clamp(3rem,6vw,5.5rem)] font-semibold leading-none tracking-display text-turquoise">{f.k}</span>
+              <span className="font-display text-[clamp(3rem,6vw,5.5rem)] font-medium leading-none tracking-display text-turquoise">{f.k}</span>
               <span className="text-lead">{f.v}</span>
             </RevealItem>
           ))}
@@ -109,14 +109,14 @@ export function InsidePictoria() {
         <Reveal className="grid gap-10 sm:grid-cols-2 lg:col-span-4">
           {t.inside.notes.map((n) => (
             <RevealItem key={n.title} className="sm:col-span-2 lg:col-span-2">
-              <h3 className="font-display text-[1.375rem] font-semibold tracking-[-0.02em]">{n.title}</h3>
+              <h3 className="font-display text-[1.375rem] font-medium tracking-[-0.02em]">{n.title}</h3>
               <p className="mt-2 max-w-[38ch] text-[1.0625rem]">{n.text}</p>
             </RevealItem>
           ))}
         </Reveal>
 
         <div className="lg:col-span-7 lg:col-start-6">
-          <h3 className="font-display text-title font-semibold">{t.inside.studiosTitle}</h3>
+          <h3 className="font-display text-title font-medium">{t.inside.studiosTitle}</h3>
           <Reveal as="ul" className="mt-8 flex flex-col gap-2">
             {studios.map((s) => (
               <RevealItem as="li" key={s.id}>
@@ -126,7 +126,7 @@ export function InsidePictoria() {
                   rel="noreferrer"
                   className="group grid grid-cols-[1fr_auto] items-center gap-x-6 gap-y-1 bg-plum px-5 py-5 transition-colors hover:bg-plum-2 md:grid-cols-[minmax(10rem,14rem)_1fr_auto] md:px-6"
                 >
-                  <span className="font-display text-[1.375rem] font-semibold tracking-[-0.02em]">{l(s.district)}</span>
+                  <span className="font-display text-[1.375rem] font-medium tracking-[-0.02em]">{l(s.district)}</span>
                   <span className="order-3 col-span-2 text-[1.0625rem] md:order-none md:col-span-1">
                     {l(s.address)}
                     {s.digital && <span className="ml-3 inline-block whitespace-nowrap font-semibold text-turquoise">· {t.inside.digitalHere}</span>}

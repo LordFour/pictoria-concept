@@ -13,7 +13,7 @@ export function YourTurn() {
     <section id="contacts" aria-labelledby="turn-title" className="paper relative overflow-hidden pb-[clamp(6rem,11vw,10rem)] pt-[clamp(6rem,13vw,13rem)]">
       <div className="frame">
         <Reveal>
-          <RevealItem as="h2" className="font-display text-[clamp(2.25rem,10vw,9.25rem)] font-semibold leading-[0.92] tracking-display md:text-[8.6vw]">
+          <RevealItem as="h2" className="font-display text-[clamp(2.25rem,10vw,9.25rem)] font-medium leading-[0.92] tracking-display md:text-[8.6vw]">
             <span id="turn-title">{t.turn.title}</span>
           </RevealItem>
         </Reveal>
@@ -45,7 +45,7 @@ export function YourTurn() {
             </svg>
             <Link
               to="/enroll"
-              className="group relative flex min-h-[5.5rem] items-center justify-between gap-6 px-2 font-display text-[clamp(1.25rem,2.2vw,1.875rem)] font-semibold tracking-[-0.02em] text-ink"
+              className="group relative flex min-h-[5.5rem] items-center justify-between gap-6 px-2 font-display text-[clamp(1.25rem,2.2vw,1.875rem)] font-medium tracking-[-0.02em] text-ink"
             >
               <span>{t.turn.cta}</span>
               <span aria-hidden className="text-[1.5em] transition-transform duration-300 group-hover:translate-x-2">
@@ -57,7 +57,7 @@ export function YourTurn() {
 
         <Reveal className="mt-[clamp(5rem,10vw,9rem)] grid gap-12 md:grid-cols-2 lg:grid-cols-12">
           <RevealItem className="lg:col-span-5">
-            <h3 className="font-display text-[1.375rem] font-semibold tracking-[-0.02em]">{t.turn.studios}</h3>
+            <h3 className="font-display text-[1.375rem] font-medium tracking-[-0.02em]">{t.turn.studios}</h3>
             <ul className="mt-5 flex flex-col gap-4">
               {studios.map((s) => (
                 <li key={s.id}>
@@ -72,12 +72,12 @@ export function YourTurn() {
             </ul>
           </RevealItem>
           <RevealItem className="lg:col-span-3 lg:col-start-7">
-            <h3 className="font-display text-[1.375rem] font-semibold tracking-[-0.02em]">{t.turn.call}</h3>
+            <h3 className="font-display text-[1.375rem] font-medium tracking-[-0.02em]">{t.turn.call}</h3>
             <ul className="mt-5 flex flex-col gap-4">
               {contacts.phones.map((p) => (
                 <li key={p.tel}>
                   <a href={`tel:${p.tel}`} className="group inline-block">
-                    <span className="block font-display text-[1.375rem] font-semibold tracking-[-0.01em] group-hover:text-turquoise-deep">{p.number}</span>
+                    <span className="block font-display text-[1.375rem] font-medium tracking-[-0.01em] group-hover:text-turquoise-deep">{p.number}</span>
                     <span className="block text-[0.9375rem]">{l(p.label)}</span>
                   </a>
                 </li>
@@ -85,11 +85,11 @@ export function YourTurn() {
             </ul>
           </RevealItem>
           <RevealItem className="lg:col-span-3 lg:col-start-10">
-            <h3 className="font-display text-[1.375rem] font-semibold tracking-[-0.02em]">{t.turn.write}</h3>
+            <h3 className="font-display text-[1.375rem] font-medium tracking-[-0.02em]">{t.turn.write}</h3>
             <a href={`mailto:${contacts.email}`} className="mt-5 inline-block break-all text-[1.0625rem] font-semibold underline decoration-2 underline-offset-4 hover:text-turquoise-deep">
               {contacts.email}
             </a>
-            <h3 className="mt-10 font-display text-[1.375rem] font-semibold tracking-[-0.02em]">{t.turn.follow}</h3>
+            <h3 className="mt-10 font-display text-[1.375rem] font-medium tracking-[-0.02em]">{t.turn.follow}</h3>
             <ul className="mt-4 flex gap-5">
               <li>
                 <a href={contacts.instagram} target="_blank" rel="noreferrer" className="line-link">
