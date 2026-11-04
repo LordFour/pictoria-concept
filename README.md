@@ -6,7 +6,15 @@
 
 ## Демо онлайн
 
-https://lordfour.github.io/pictoria-concept/ — собирается и публикуется GitHub Actions при каждом push в `main` (`.github/workflows/pages.yml`). Страница помечена `noindex`.
+https://lordfour.github.io/pictoria-concept/ — статическая сборка в ветке `gh-pages`. Страница помечена `noindex`.
+
+Обновить демо после изменений (Git Bash):
+
+```bash
+MSYS_NO_PATHCONV=1 PAGES_BASE=/pictoria-concept/ npm run build
+cp dist/index.html dist/404.html   # SPA-fallback для прямых ссылок
+npx gh-pages -d dist               # или вручную: закоммитить dist в ветку gh-pages
+```
 
 ## Запуск
 
